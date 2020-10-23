@@ -1,0 +1,1 @@
+export const GET_PLATES = 'GET_PLATES'
