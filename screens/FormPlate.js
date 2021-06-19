@@ -11,7 +11,8 @@ import {
   Col,
   Icon,
   Button,
-  H3
+  H3,
+  Row
 } from 'native-base';
 import OrderContext from '../context/order/OrderContext';
 
@@ -20,7 +21,7 @@ import globalStyles from '../styles/global';
 
 const FormPlate = () => {
   const { plate, addPlateFn } = useContext(OrderContext);
-  const { name, price } = plate;
+  const { price } = plate;
 
   const navigation = useNavigation();
   const [quantity, setQuantity] = useState(1);
@@ -71,30 +72,39 @@ const FormPlate = () => {
   return (
     <Container style={globalStyles.container}>
       <Content style={styles.content}>
-        <H3 style={[globalStyles.title, { marginBottom: 20 }]}>{name}</H3>
         <Form>
           <Grid>
-            <Col style={{ alignItems: 'center' }}>
-              <Button
-                style={[styles.btn, globalStyles.btn]}
-                onPress={() => decrement()}>
-                <Icon name="remove" />
-              </Button>
-            </Col>
-            <Col style={{ alignItems: 'center',
-              justifyContent: 'center' }}>
-              <H3>{quantity}</H3>
-            </Col>
-            <Col style={{ alignItems: 'center' }}>
-              <Button
-                style={[styles.btn, globalStyles.btn]}
-                onPress={() => increment()}>
-                <Icon name="add" />
-              </Button>
-            </Col>
+            <Row>
+              <Col style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'center'
+              }}>
+                <Button
+                  style={[styles.btn, globalStyles.btnCir]}
+                  onPress={() => decrement()}>
+                  <Icon name="remove" />
+                </Button>
+              </Col>
+              <Col style={{ alignItems: 'center',
+                justifyContent: 'center' }}>
+                <H3>{quantity}</H3>
+              </Col>
+              <Col style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'center' 
+              }}>
+                <Button
+                  style={[styles.btn, globalStyles.btnCir]}
+                  onPress={() => increment()}>
+                  <Icon name="add" />
+                </Button>
+              </Col>
+            </Row>
           </Grid>
           <Text style={globalStyles.quantity}>
-            Subtotal: $ {Number.parseFloat(subtotal).toFixed(2)}
+            Subtotal: ${Number.parseFloat(subtotal).toFixed(2)}
           </Text>
         </Form>
       </Content>
@@ -104,7 +114,7 @@ const FormPlate = () => {
             <Text
               uppercase={false}
               style={[globalStyles.txtBtn, { fontSize: 16 }]}>
-              Order plate
+              Order plate 2352
             </Text>
           </Button>
         </FooterTab>

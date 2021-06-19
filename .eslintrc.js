@@ -3,8 +3,6 @@ module.exports = {
   'env': {
     'browser': true,
     'react-native/react-native': true
-    //"es6": true,
-    //"node": true,
   },
   'extends': ['eslint:recommended', 'plugin:react/recommended'],
   'globals': {

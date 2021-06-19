@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { calcValue } from '../utils';
 
 const globalStyles = StyleSheet.create({
   container: {
@@ -10,6 +11,12 @@ const globalStyles = StyleSheet.create({
   },
   btn: {
     backgroundColor: '#ab47bc'
+  },
+  btnCir: {
+    backgroundColor: '#ab47bc',
+    borderRadius: 200,
+    width: calcValue('width', 0.15),
+    height: calcValue('width', 0.15)
   },
   txtBtn: {
     textTransform: 'none',
@@ -31,6 +38,11 @@ const globalStyles = StyleSheet.create({
   },
   btnSecondary: {
     backgroundColor: '#26a69a'
+  },
+  pv8: {
+    flex: 1,
+    marginHorizontal: '2.5%',
+    marginVertical: 20
   }
 });
 

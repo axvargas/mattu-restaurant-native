@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Image } from 'react-native';
+import { Image, Alert } from 'react-native';
 import {
   Container,
   Content,
@@ -10,18 +10,42 @@ import {
   Text,
   H3,
   Card,
-  CardItem
+  CardItem,
+  Icon
 } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
 import globalStyles from '../styles/global';
 
 import OrderContext from '../context/order/OrderContext';
+import FormPlate from './FormPlate';
+
 const PlateDetail = () => {
-  const { plate } = useContext(OrderContext);
+  const { plate, addPlateFn } = useContext(OrderContext);
   const { name, price, description, image } = plate;
   const navigation = useNavigation();
-
+  const handleAddPlate = () => {
+    const subOrder = {
+      ...plate,
+      quantity,
+      subtotal
+    };
+    addPlateFn(subOrder);
+    navigation.navigate('SummaryOrder');
+  };
+  const confirmOrderPlate = () => {
+    Alert.alert(
+      'Order plate confirmation',
+      'Are you sure you want to add this plate to your order?',
+      [
+        { text: 'Yes',
+          onPress: () => handleAddPlate() },
+        { text: 'Cancel',
+          style: 'cancel' }
+      ],
+      { cancelable: false }
+    );
+  };
   return (
     <Container style={globalStyles.container}>
       <Content style={globalStyles.content}>
@@ -49,17 +73,25 @@ const PlateDetail = () => {
             </Body>
           </CardItem>
         </Card>
+        <FormPlate/>
       </Content>
       <Footer>
         <FooterTab>
           <Button
-            style={globalStyles.btn}
-            onPress={() => navigation.navigate('FormPlate')}>
+            style={{
+              ...globalStyles.btn,
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+            onPress={() => confirmOrderPlate()}>
             <Text
-              uppercase={false}
-              style={[globalStyles.txtBtn, { fontSize: 16 }]}>
-              Order plate
+              style={[globalStyles.txtBtn, { fontSize: 16,
+                marginRight: -20 }]}>
+              Add to car
             </Text>
+            <Icon style={{ color: '#FFFFFF' }} name='add'/>
           </Button>
         </FooterTab>
       </Footer>
