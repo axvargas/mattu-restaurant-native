@@ -1,1 +1,1 @@
-export const GET_PLATES = 'GET_PLATES'
+export const GET_PLATES = 'GET_PLATES';

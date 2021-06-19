@@ -1,3 +1,3 @@
-import { createContext } from 'react'
-const FirebaseContext = createContext()
-export default FirebaseContext
+import { createContext } from 'react';
+const FirebaseContext = createContext();
+export default FirebaseContext;
