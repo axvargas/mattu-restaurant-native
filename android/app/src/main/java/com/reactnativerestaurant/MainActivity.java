@@ -1,4 +1,4 @@
-package com.reactnativerestaurant;
+package com.mattu.restaurant;
 
 import com.facebook.react.ReactActivity;
 

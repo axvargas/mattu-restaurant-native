@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1097004899931",
+    "firebase_url": "https://mattu-restaurant.firebaseio.com",
+    "project_id": "mattu-restaurant",
+    "storage_bucket": "mattu-restaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097004899931:android:fd301eed39d4d7e440a97e",
+        "android_client_info": {
+          "package_name": "com.mattu.restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097004899931-o0kqmloos5piv1kp67rvluafhe8bp871.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaWXw0wZz-P45ELeStBDq8INTsYnxD2wg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097004899931-o0kqmloos5piv1kp67rvluafhe8bp871.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
